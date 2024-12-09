@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7867807799779951760L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.kaab.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"emailId\",\"type\":\"string\",\"default\":\"\"}]}");
+  private static final long serialVersionUID = 1998454368949166000L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.kaab.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"middleName\",\"type\":\"string\",\"default\":\"\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"emailId\",\"type\":\"string\",\"default\":\"\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -53,6 +53,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence firstName;
+  @Deprecated public java.lang.CharSequence middleName;
   @Deprecated public java.lang.CharSequence lastName;
   @Deprecated public java.lang.CharSequence emailId;
 
@@ -67,12 +68,14 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * All-args constructor.
    * @param id The new value for id
    * @param firstName The new value for firstName
+   * @param middleName The new value for middleName
    * @param lastName The new value for lastName
    * @param emailId The new value for emailId
    */
-  public Employee(java.lang.CharSequence id, java.lang.CharSequence firstName, java.lang.CharSequence lastName, java.lang.CharSequence emailId) {
+  public Employee(java.lang.CharSequence id, java.lang.CharSequence firstName, java.lang.CharSequence middleName, java.lang.CharSequence lastName, java.lang.CharSequence emailId) {
     this.id = id;
     this.firstName = firstName;
+    this.middleName = middleName;
     this.lastName = lastName;
     this.emailId = emailId;
   }
@@ -83,8 +86,9 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     switch (field$) {
     case 0: return id;
     case 1: return firstName;
-    case 2: return lastName;
-    case 3: return emailId;
+    case 2: return middleName;
+    case 3: return lastName;
+    case 4: return emailId;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -95,8 +99,9 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: firstName = (java.lang.CharSequence)value$; break;
-    case 2: lastName = (java.lang.CharSequence)value$; break;
-    case 3: emailId = (java.lang.CharSequence)value$; break;
+    case 2: middleName = (java.lang.CharSequence)value$; break;
+    case 3: lastName = (java.lang.CharSequence)value$; break;
+    case 4: emailId = (java.lang.CharSequence)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -131,6 +136,22 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    */
   public void setFirstName(java.lang.CharSequence value) {
     this.firstName = value;
+  }
+
+  /**
+   * Gets the value of the 'middleName' field.
+   * @return The value of the 'middleName' field.
+   */
+  public java.lang.CharSequence getMiddleName() {
+    return middleName;
+  }
+
+  /**
+   * Sets the value of the 'middleName' field.
+   * @param value the value to set.
+   */
+  public void setMiddleName(java.lang.CharSequence value) {
+    this.middleName = value;
   }
 
   /**
@@ -199,6 +220,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence firstName;
+    private java.lang.CharSequence middleName;
     private java.lang.CharSequence lastName;
     private java.lang.CharSequence emailId;
 
@@ -221,13 +243,17 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         this.firstName = data().deepCopy(fields()[1].schema(), other.firstName);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.lastName)) {
-        this.lastName = data().deepCopy(fields()[2].schema(), other.lastName);
+      if (isValidValue(fields()[2], other.middleName)) {
+        this.middleName = data().deepCopy(fields()[2].schema(), other.middleName);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.emailId)) {
-        this.emailId = data().deepCopy(fields()[3].schema(), other.emailId);
+      if (isValidValue(fields()[3], other.lastName)) {
+        this.lastName = data().deepCopy(fields()[3].schema(), other.lastName);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.emailId)) {
+        this.emailId = data().deepCopy(fields()[4].schema(), other.emailId);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -245,13 +271,17 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         this.firstName = data().deepCopy(fields()[1].schema(), other.firstName);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.lastName)) {
-        this.lastName = data().deepCopy(fields()[2].schema(), other.lastName);
+      if (isValidValue(fields()[2], other.middleName)) {
+        this.middleName = data().deepCopy(fields()[2].schema(), other.middleName);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.emailId)) {
-        this.emailId = data().deepCopy(fields()[3].schema(), other.emailId);
+      if (isValidValue(fields()[3], other.lastName)) {
+        this.lastName = data().deepCopy(fields()[3].schema(), other.lastName);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.emailId)) {
+        this.emailId = data().deepCopy(fields()[4].schema(), other.emailId);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -334,6 +364,45 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /**
+      * Gets the value of the 'middleName' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getMiddleName() {
+      return middleName;
+    }
+
+    /**
+      * Sets the value of the 'middleName' field.
+      * @param value The value of 'middleName'.
+      * @return This builder.
+      */
+    public com.kaab.dto.Employee.Builder setMiddleName(java.lang.CharSequence value) {
+      validate(fields()[2], value);
+      this.middleName = value;
+      fieldSetFlags()[2] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'middleName' field has been set.
+      * @return True if the 'middleName' field has been set, false otherwise.
+      */
+    public boolean hasMiddleName() {
+      return fieldSetFlags()[2];
+    }
+
+
+    /**
+      * Clears the value of the 'middleName' field.
+      * @return This builder.
+      */
+    public com.kaab.dto.Employee.Builder clearMiddleName() {
+      middleName = null;
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'lastName' field.
       * @return The value.
       */
@@ -347,9 +416,9 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public com.kaab.dto.Employee.Builder setLastName(java.lang.CharSequence value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.lastName = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this;
     }
 
@@ -358,7 +427,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'lastName' field has been set, false otherwise.
       */
     public boolean hasLastName() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
 
 
@@ -368,7 +437,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       */
     public com.kaab.dto.Employee.Builder clearLastName() {
       lastName = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -386,9 +455,9 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public com.kaab.dto.Employee.Builder setEmailId(java.lang.CharSequence value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.emailId = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -397,7 +466,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'emailId' field has been set, false otherwise.
       */
     public boolean hasEmailId() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
 
@@ -407,7 +476,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       */
     public com.kaab.dto.Employee.Builder clearEmailId() {
       emailId = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -418,8 +487,9 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         Employee record = new Employee();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.firstName = fieldSetFlags()[1] ? this.firstName : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.lastName = fieldSetFlags()[2] ? this.lastName : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.emailId = fieldSetFlags()[3] ? this.emailId : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.middleName = fieldSetFlags()[2] ? this.middleName : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.lastName = fieldSetFlags()[3] ? this.lastName : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.emailId = fieldSetFlags()[4] ? this.emailId : (java.lang.CharSequence) defaultValue(fields()[4]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
